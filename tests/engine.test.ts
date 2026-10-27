@@ -134,6 +134,8 @@ test('投入任务：失败可恢复重试，正确方案才允许继续，直�
 test('任务内容校验拒绝不可满足的约束', () => {
   const species = { ...swift, events: [{ ...swift.events[0], task: { budget: 2, channels: [{ id: 'food', label: '食物', hint: '', min: 3 }], success: '', failure: { title: '', reason: '', lesson: '' } } }] };
   assert.ok(validateSpecies(species).some(issue => issue.includes('无法完成')));
+  const allFail = { ...swift, events: [{ ...swift.events[0], choices: [{ ...swift.events[0].choices[0], failure: { title: '失败', reason: '失败', lesson: '失败' } }] }] };
+  assert.ok(validateSpecies(allFail).some(issue => issue.includes('兜底选项')));
   assert.throws(() => retry(createGame(swift)));
 });
 

@@ -129,7 +129,7 @@ export function validateSpecies(species: Species): string[] {
     if (event.ageDays < age) issues.push(`年龄倒退：${event.id}`);
     age = event.ageDays;
     if (!species.chapters[event.chapter]) issues.push(`章节不存在：${event.id}`);
-    if (!event.choices.length || !event.choices.some(c => !c.requires)) issues.push(`缺少可用的兜底选项：${event.id}`);
+    if (!event.choices.length || !event.choices.some(c => !c.requires && !c.failure)) issues.push(`缺少可用的兜底选项：${event.id}`);
     if (new Set(event.choices.map(c => c.id)).size !== event.choices.length) issues.push(`重复选项：${event.id}`);
     if (event.fact && !species.facts.some(f => f.id === event.fact)) issues.push(`知识条目不存在：${event.fact}`);
     if (event.task) {

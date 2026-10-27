@@ -84,6 +84,7 @@ function render() {
   document.querySelector('#open-stage-guide')!.addEventListener('click', () => showGuide(stageIndex));
   const mediaContainer = document.querySelector<HTMLElement>('#stage-media')!;
   mediaContainer.hidden = isFlying;
+  if (isFlying) mediaContainer.querySelectorAll<HTMLMediaElement>('audio, video').forEach(media => media.pause());
   document.querySelector<HTMLElement>('#sky')!.hidden = !isFlying;
   if (mediaStage !== stageIndex) { mediaStage = stageIndex; void renderMedia(mediaContainer, stage.slots.slice(0, 2)); }
   const caption = document.querySelector<HTMLElement>('#scene-caption')!;

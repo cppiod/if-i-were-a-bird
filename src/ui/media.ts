@@ -14,6 +14,7 @@ function loadShared() {
   }).then(value => parseSharedManifest(value, mediaSlots.map(s => s.id))).catch((): Record<string, SharedAsset> => ({}));
 }
 export function clearMedia(container: HTMLElement) {
+  container.querySelectorAll<HTMLMediaElement>('audio, video').forEach(media => media.pause());
   urls.get(container)?.forEach(url => URL.revokeObjectURL(url));
   urls.delete(container);
   generations.set(container, (generations.get(container) ?? 0) + 1);
