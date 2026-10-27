@@ -1,0 +1,21 @@
+{
+  "name": "if-i-were-a-bird",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "phaser": "3.90.0"
+  },
+  "devDependencies": {
+    "fake-indexeddb": "6.2.6",
+    "typescript": "5.9.3",
+    "vite": "6.4.5"
+  }
+}
