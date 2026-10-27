@@ -7,6 +7,7 @@ export interface SkyControl {
   setLandscape: (landscape: Landscape, night?: boolean) => void;
   beginFlight: (mode: FlightMode, seed: number, done: (result: FlightResult) => void) => void;
   pause: (paused: boolean) => void;
+  reduceMotion: (value: boolean) => void;
   assist: () => void;
   destroy: () => void;
 }
@@ -14,6 +15,7 @@ export interface SkyControl {
 export function mountSky(parent: HTMLElement, onTick: (left: number, insects: number, paused: boolean) => void): SkyControl {
   let scene: SkyScene | undefined;
   let wantedLandscape: Landscape = 'city', wantedNight = false, wantedPaused = false;
+  let motionReduced = false;
   let queuedFlight: (() => void) | undefined;
   let destroyed = false;
   class SkyScene extends Phaser.Scene {
@@ -102,7 +104,7 @@ export function mountSky(parent: HTMLElement, onTick: (left: number, insects: nu
       this.ink.fillStyle(color, alpha).fillPoints(points.map(([x, y]) => new Phaser.Geom.Point(x, y)), true);
     }
     private draw() {
-      const g = this.ink, t = this.timePassed, landscape = wantedLandscape;
+      const g = this.ink, t = motionReduced ? 0 : this.timePassed, landscape = wantedLandscape;
       const night = wantedNight;
       g.clear();
       const skyTop = night ? 0x152c3d : landscape === 'desert' ? 0xd4bda0 : 0xc7dcd6;
@@ -196,6 +198,7 @@ export function mountSky(parent: HTMLElement, onTick: (left: number, insects: nu
       if (scene) begin(); else queuedFlight = begin;
     },
     pause(paused) { wantedPaused = paused; scene?.setPaused(paused); },
+    reduceMotion(value) { motionReduced = value; },
     assist() { scene?.finish(true); },
     destroy() { destroyed = true; game.destroy(true); },
   };

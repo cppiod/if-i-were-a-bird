@@ -1,4 +1,24 @@
-# 北京雨燕：初始事实台账
+# 北京雨燕：事实台账
+
+## 2026-10-27 · 八阶段资料更新
+
+当前条目与来源在 src/content/guide.ts，八个阶段手记 ID 为 intro、courtship、nest、incubation、rearing、flight、migration、home。详细字段直接显示在阶段指南，标明来源与地区边界；以下初始表作为历史保留。
+
+新增核对入口：
+
+- [2022 北京雨燕迁徙追踪论文](https://pmc.ncbi.nlm.nih.gov/articles/PMC9245314/)：北京繁殖种群的南北迁区域与时序，不作为所有个体的固定日程。
+- [Blasco-Zumeta & Heinze 普通雨燕鉴别资料](https://www.blascozumeta.com/specie_files/07950_Apus_apus_E.pdf)：雌雄羽色相近、幼成鸟羽缘差异。
+- [BTO 普通雨燕生命周期](https://www.bto.org/learn/about-birds/birdfacts/swift)：窝卵数、孵化与离巢参考区间；主要非北京资料。
+- [1998 普通雨燕粪囊研究](https://www.sciencedirect.com/science/article/pii/S0003347298908399)：幼雏早期亲鸟吞食粪囊的记录，避免“一律衔走”。
+- [Woodland Trust 普通雨燕资料](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/animals/birds/swift/)：材料与唾液黏结的筑巢背景。
+- [Hawk and Owl Trust 燕隼资料](https://hawkandowltrust.org/learn-and-discover/about-birds-of-prey/hobby)：捕食关系示例，不是北京捕食率。
+- [奥林匹克博物馆妮妮藏品](https://olympic-museum-artefacts.zetcom.net/en/collection/item/131257/)：燕形艺术与文化说明，不自动提供素材使用权，也不等于生物学认种。
+
+明确待补：北京野外每日亲鸟喂食频次、具体求偶动作、迁途合作分工、北京本地产卵日期与各发育阶段的可靠连续素材。没有采用人工救护饲养次数代替野外喂食数据。
+
+投入块、风险卡和失败阈值为教学规则。飞行阶段切换为幼鸟，迁徙阶段切回成鸟；日龄字段仅保持叙事时间先后，不展示为当前视角个体的真实日龄。
+
+## 历史：2026-10-25 初始台账
 
 更新：2026-10-25。条目与 src/content/swift.ts 的知识 ID 对应。公开资料已初步核对；本地专家审核均未完成。
 
