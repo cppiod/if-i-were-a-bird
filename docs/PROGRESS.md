@@ -1,5 +1,18 @@
 # 开发进展报告
 
+## 2026-10-27 · GitHub 源码与公开演示
+
+- 已创建公开仓库：https://github.com/cppiod/if-i-were-a-bird 。
+- 已发布 GitHub Pages：https://cppiod.github.io/if-i-were-a-bird/ 。无需 ChatGPT 或 GitHub 登录。
+- 首次发布工作流成功：[GitHub Actions 运行记录](https://github.com/cppiod/if-i-were-a-bird/actions/runs/40464975896)。GitHub 环境中 10 项测试与生产构建通过。
+- 添加 Pages 自动部署工作流，main 推送后先测试、构建，再部署 dist/；构建 job 只读 Pages，部署 job 使用必要的 Pages 与 OIDC 权限。
+- Vite 改用相对资源路径，确保入口、样式与懒加载飞行脚本可以从仓库子路径加载。
+- 验证公开首页与全部构建产物：HTML、入口脚本、样式、飞行脚本均返回 HTTP 200。
+- 在浏览器中确认首页插画与游戏界面渲染，观察到第一事件结果与本地保存提示。此为部署冒烟验证，不代表完整操作、帧率、移动端或科学审核已完成。
+- 已使用公开 GitHub Pages 地址做首次可视验证；此前本地浏览器验证受限的记录保留在下方历史报告。
+- 源码不包含依赖目录、构建目录、环境文件或认证凭据。使用 GitHub noreply 邮箱记录提交。
+- 下一步仍是完整试玩、飞行手感、手机布局及科学内容审核；本轮不扩大玩法范围。
+
 ## 2026-10-25 · v0.1.0 · 初始流程原型
 
 ### 本轮目标

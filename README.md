@@ -6,7 +6,7 @@
 
 ## 在线试玩与源码
 
-- [GitHub Pages 演示](https://cppiod.github.io/if-i-were-a-bird/)（首次部署状态见仓库 Actions）
+- [GitHub Pages 演示](https://cppiod.github.io/if-i-were-a-bird/)（已于 2026-10-27 发布）
 - [GitHub 源码](https://github.com/cppiod/if-i-were-a-bird)
 
 演示无需 ChatGPT 或 GitHub 登录。游戏进度保存在访问者当前浏览器，和本地开发地址的存档分开。
